@@ -1,7 +1,7 @@
 #include <SDL2/SDL.h>
-#include <iostream>
+#include <stdio.h>
 
-const int SCREEN_WIDTH = 340;
+const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 const int INITIAL_RADIUS = 10;
 const int CIRCLE_SPEED = 2;
@@ -15,7 +15,7 @@ bool initializeSDL(SDL_Window** window, SDL_Renderer** renderer) {
         return false;
     }
 
-    *window = SDL_CreateWindow("Circle Drawing", 
+    *window = SDL_CreateWindow("Exanding The Circle Radius", 
                                 SDL_WINDOWPOS_CENTERED, 
                                 SDL_WINDOWPOS_CENTERED, 
                                 SCREEN_WIDTH, 
