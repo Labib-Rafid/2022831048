@@ -37,8 +37,8 @@ bool initializeSDL(SDL_Window** window, SDL_Renderer** renderer) {
 void drawSolidCircle(SDL_Renderer* renderer, int centerX, int centerY, int radius) {
     for (int x = -radius; x <= radius; x++) {
         for (int y = -radius; y <= radius; y++) {
-            
-                SDL_RenderDrawPoint(renderer, centerX + x, centerY + y);
+                if(x*x + y*y <= radius*radius)
+                    SDL_RenderDrawPoint(renderer, centerX + x, centerY + y);
         }
     }
 }
@@ -67,7 +67,7 @@ int main(int argc, char* argv[]) {
 
         
         SDL_SetRenderDrawColor(renderer, 244,42,65, 255);
-        drawSolidCircle(renderer, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 100);
+        drawSolidCircle(renderer, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 150);
 
         SDL_RenderPresent(renderer);
     }
